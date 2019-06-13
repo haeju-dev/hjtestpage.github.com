@@ -1,10 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+	
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	
+	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+	<script src="jquery.mobile/jquery-1.11.1.min.js"></script>
+	<script src="jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+	
+	<script src="cordova.js"></script>	
+
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+</style>
+
+	<script>
+        $(document).ready( function() {
+            // toggle 이벤트
+            let togglefunc = function () {
+                $('#mainwp').toggle('fast',
+                    function () {
+                        let opacityvalue = parseFloat($(this).css('opacity'));
+                        console.log(opacityvalue);
+                        if(opacityvalue === 0.5){
+                            $(this).css('opacity', '1.0');
+                        }
+                        else {
+                            $(this).css('opacity', '0.5');
+                        }
+                    }
+                )
+            };
+
+            $('#togglebtn').click(togglefunc);
+
+        });
+	</script>
+
 </head>
+
 <body>
-tsetaetase
+<div data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>201758086_황해주</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img id="mainwp" src="wp1.jpg" width="40%" height="30%"><br>
+			<span id="togglebtn">누르면 사진이 토글됩니다</span>
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">Introduce</a></li>
+				<li><a href="#movie" data-rel="dialog">Video</a></li>
+				<li><a href="#wizard3-1" data-rel="dialog">Music</a></li>
+				<li><a href="#gallery">WallPapers</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>201758086</h1>
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>Krewella</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="wp1.jpg" width="40%" height="30%">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>History</h3>
+					<p>미국의 일렉트로니카 DJ/프로듀서/밴드. 유명한 일렉트로니카 아티스트가 유럽에 비해 많지 않은 미국에서 의외의 존재감을 나타내고 있는 그룹이다. 장르를 가리지 않고 곡을 쓰는데, 하우스와 덥스텝, 테크노, 하드스타일과 드럼 앤 베이스까지 소화해낸다. 일원들이 록밴드 경험이 있어 이 사람들도 록밴드를 하기도 하는 등 프로그레시브라는 말 자체이다.
+
+						프로필에서도 나와있듯, 2007년에 미국 시카고에서 결성되었는데, 자한의 말에 따르면 어느 날 레인 맨의 집에서 댄스파티가 열렸는데 아니 이사람 자기 집에서 파티 열고? 레인맨이 자기 방에서 컴퓨터로 음악 프로그래밍을 하고 있는 것을 자한이 관심을 갖게 되어 취미삼아 녹음을 하게 되었고 친구의 말을 듣고 열중하게 되었다. 크루엘라의 음악이 점점 구체화된 다음 또 한 명의 보컬이 필요해서 당시 다른 밴드에서 보컬을 하던 야스민이 본인의 밴드를 그만 두고 영입되었다고 한다.</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>Activity</h3>
+					<p>2010년도부터 싱글을 내면서 활동을 시작했고 2012년에 낸 EP 'Play Hard'로 인기를 얻기 시작했으며 첫 정규앨범은 'Get Wet'은 빌보드 댄스차트 1위와 200차트 8위를 달성하면서 deadmau5, Skrillex에 이은 북미대륙 일렉 강자로 떠올랐다. 특히나 2013년 UMF 마이애미 공연중에서 가장 많은 호평을 받은 뮤지션 중에 하나였고 이 때의 유투브 스트리밍이 이들에게 엄청난 인기를 안겨주었을 정도. 2014년 같은 공연에서는 메인스테이지에서 공연을 했다.
+
+						인기를 반영한 듯, 2014년 DJ MAG TOP 100에서 44위를 차지하였다.
+
+						2013년 울트라 코리아때 내한을 했으며 의외로 헤드라이너 못지 않게 가장 많은 호평을 받은 공연을 선사했으며 당시에 다녀온 사람들도 이 들을 입이 마르도록 칭찬을 하는 글들로 수두룩하게 있었다. 그리고 일년 만에 글로벌개더링 코리아를 통해 다시 내한을 한다!</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>201758086</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>Krewella 영상</h1>
+		</div>
+		<div data-role="content" >
+			<div class="ui-bar ui-bar-e">Krewella 신곡 영상</div><br/>
+			<li><iframe width="560" height="315" src="https://www.youtube.com/embed/Rlfp6-rwjUU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li><br/>
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="wizard3-1">
+		<div data-role="header">
+			<h1>Krewella 노래1</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">Alibi</div><br/>
+			<iframe src="https://open.spotify.com/embed?uri=spotify%3Atrack%3A05WA2W5m8omNt4EZ51MZf3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		</div>
+		<div data-role="footer">
+			<a href="#home"  data-direction="reverse">이전</a>
+			<a href="#wizard3-2" data-rel="dialog" data-transition="slide">다음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="wizard3-2">
+		<div data-role="header">
+			<h1>Krewella 노래2</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-bar ui-bar-e">Bad Liar</div><br/>
+			<iframe src="https://open.spotify.com/embed?uri=spotify%3Atrack%3A22NGk2oktlQtKoiHiEXt6r" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		</div>
+		<div data-role="footer">
+			<a href="#wizard3-1"  data-direction="reverse">이전</a>
+			<a href="#home">처음</a>
+		</div>
+	</div>
+
+	<div data-role="page" id="gallery"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>Krewella 갤러리</h1>
+		</div>
+		<div data-role="content">
+            <ul class="picture">
+				<li><a href="wp1.jpg" rel="external"><img src="wp1.jpg" /></a></li>
+				<li><a href="wp2.jpg" rel="external"><img src="wp2.jpg" /></a></li>
+				<li><a href="wp3.jpg" rel="external"><img src="wp3.jpg" /></a></li>
+				<li><a href="wp4.jpg" rel="external"><img src="wp4.jpg" /></a></li>
+				<li><a href="wp5.jpg" rel="external"><img src="wp5.jpg" /></a></li>
+				<li><a href="wp6.jpg" rel="external"><img src="wp6.jpg" /></a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>201758086</h1>
+		</div>		
+	</div>
+</div>	
 </body>
 </html>
